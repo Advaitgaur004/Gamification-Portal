@@ -1,10 +1,10 @@
 from rest_framework import viewsets
-from .models import Task, StudentProfile
-from .serializers import TaskSerializer, StudentProfileSerializer
+from .models import StudentProfile, Badge
+from .serializers import  StudentProfileSerializer, BadgeSerializer
 
-class TaskViewSet(viewsets.ModelViewSet):
-    queryset = Task.objects.all()
-    serializer_class = TaskSerializer
+class BadgeViewSet(viewsets.ModelViewSet):
+    queryset = Badge.objects.all()
+    serializer_class = BadgeSerializer
 
 class StudentProfileViewSet(viewsets.ModelViewSet):
     queryset = StudentProfile.objects.all()
