@@ -1,16 +1,12 @@
 from rest_framework import serializers
-from .models import StudentProfile, Badge
+from .models import Task, StudentProfile
 
-class BadgeSerializer(serializers.ModelSerializer):
+class TaskSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Badge
+        model = Task
         fields = '__all__'
 
 class StudentProfileSerializer(serializers.ModelSerializer):
-       class Meta:
+    class Meta:
         model = StudentProfile
         fields = '__all__'
-        write_only_fields = ('user', 'username', 'rank_xp', 'badge', 'email', 'total_xp')
-        read_only_fields = ('id',)
-        
-    

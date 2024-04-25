@@ -1,16 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
-from student.models import StudentProfile
+from student.models import Task, StudentProfile
 
-class Task(models.Model):
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    xp_reward = models.IntegerField()
-    deadline = models.DateTimeField()
-
-    def __str__(self):
-        return self.title
-    
 class InstructorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
@@ -19,7 +10,7 @@ class InstructorProfile(models.Model):
 
 class StudentTaskStatus(models.Model):
     student = models.ForeignKey(StudentProfile, on_delete=models.CASCADE)
-    task = models.OneToOneField(Task, on_delete=models.CASCADE)
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
     completed = models.BooleanField(default=False)
     earned_xp = models.IntegerField(default=0)
 

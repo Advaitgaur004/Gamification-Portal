@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import InstructorProfile, StudentTaskStatus, Task
+from .models import InstructorProfile, StudentTaskStatus
 
-admin.site.register(Task)
 admin.site.register(InstructorProfile)
 admin.site.register(StudentTaskStatus)

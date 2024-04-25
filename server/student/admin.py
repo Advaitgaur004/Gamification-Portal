@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Badge, StudentProfile
+from .models import Task, StudentProfile
 
-admin.site.register(Badge)
+admin.site.register(Task)
 admin.site.register(StudentProfile)

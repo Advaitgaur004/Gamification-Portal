@@ -1,12 +1,6 @@
 from rest_framework import serializers
-from .models import InstructorProfile, StudentTaskStatus, Task
+from .models import InstructorProfile, StudentTaskStatus
 
-
-class TaskSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Task
-        fields = '__all__'
-        
 class InstructorProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = InstructorProfile
